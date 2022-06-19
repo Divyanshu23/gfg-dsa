@@ -10,12 +10,12 @@ public class SortThreeTypes {
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
+        sortThreeTypes(arr);
         sc.close();
     }
     
-    public static void SortThreeTypes(int[] arr) {
+    public static void sortThreeTypes(int[] arr) {
         int low = -1, mid = 0, high = arr.length;
-        int n = arr.length;
 
         while (mid < high) {
             if(arr[mid] == 0) {

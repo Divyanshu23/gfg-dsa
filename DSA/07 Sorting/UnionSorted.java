@@ -32,6 +32,8 @@ public class UnionSorted {
         int i = 0, j = 0;
 
         while (i < n1 && j < n2) {
+            if(i>0 && arr1[i]==arr1[i-1]) {i++;continue;}
+            if(j>0 && arr2[j]==arr2[j-1]) {j++;continue;}
             if(arr1[i] == arr2[j]) {
                 list.add(arr1[i]);
                 i++;

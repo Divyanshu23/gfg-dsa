@@ -30,6 +30,10 @@ public class IntersectionSorted {
 
         int i = 0, j = 0;
         while (i < n1 && j < n2) {
+            if(i > 0 && arr1[i] == arr1[i-1]) {
+                ++i;
+                continue;
+            }
             if(arr1[i] == arr2[j]) {
                 list.add(arr1[i]);
                 i++;

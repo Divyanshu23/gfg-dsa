@@ -38,7 +38,7 @@ public class Inversrions {
                 ++k;
                 ++i;
             } else {
-                arr[k] += (arr[i]%max)*max;
+                arr[k] += (arr[j]%max)*max;
                 ++k;
                 ++j;
                 count += m-i+1;
