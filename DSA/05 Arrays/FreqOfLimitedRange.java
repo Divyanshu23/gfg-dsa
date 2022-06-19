@@ -8,38 +8,28 @@ public class FreqOfLimitedRange {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int p = sc.nextInt();
-        ArrayList<Integer> arr = new ArrayList<Integer>(n);
+        int[] arr = new int[n];
         for (int i = 0; i < n; i++) {
-            arr.add(sc.nextInt());
+            arr[i] = sc.nextInt();
         }
         sc.close();
-        getFrequencies(arr, n);
+        getFrequencies(arr, n, p);
         System.out.println(arr);
     }
 
-    public static void getFrequencies(ArrayList<Integer> arr, int n) {
-        for (int i = 0; i < arr.size(); i++) {
-            arr.set(i, arr.get(i)-1);
-        }
+    public static void getFrequencies(int[] arr, int n, int p) {
+        int maxEle = p+1;
+        if(maxEle == 0) maxEle++;
 
-        Collections.sort(arr);
 
-        int begin = n;
-        for (int i = 0; i < arr.size(); i++) {
-            if(arr.get(i) >= n) {
-                arr.set(i, 0);
-                if(begin == n) begin = i;
+        for(int i=0;i<n;i++) {
+            if(arr[i]%maxEle <= n) {
+                arr[(arr[i]%maxEle)-1] += (1%maxEle)*maxEle;
             }
         }
 
-        for (int i = 0; i < begin; i++) {
-            arr.set(arr.get(i) % n, arr.get(arr.get(i) % n) + n );
+        for(int i=0;i<n;i++) {
+            arr[i] = arr[i]/maxEle;
         }
-
-        for (int i = 0; i < n; i++) {
-            arr.set(i, arr.get(i) / n);
-        }
-
-        return;
     }
 }
