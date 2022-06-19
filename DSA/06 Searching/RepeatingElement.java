@@ -35,19 +35,19 @@ public class RepeatingElement {
         return res;
     }
 
-    public static Point repeatingElement2(int[] arr) {
+    public static int repeatingElement2(int[] arr) {
         int slow = arr[0] + 1;
         int fast = slow;
 
         do {
-            slow = arr[slow + 1];
-            fast = arr[arr[fast + 1] + 1];
+            slow = arr[slow] + 1;
+            fast = arr[arr[fast] + 1] + 1;
         } while (slow != fast);
 
         slow = arr[0] + 1;
 
-        while (slwo != fast) {
-            slow = arr[slow + 1];
+        while (slow != fast) {
+            slow = arr[slow] + 1;
             fast = arr[fast] + 1;
         }
 
