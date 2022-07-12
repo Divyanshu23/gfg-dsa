@@ -36,17 +36,8 @@ public class MedianRowWiseSorted {
             int midPos = 0;
             int pos = 0;
             for (int i = 0; i < r; ++i){
-                pos = Arrays.binarySearch(mat[i],mid);
-
-                if(pos < 0)
-                    pos = Math.abs(pos) - 1;
-                else
-                {
-                    while(pos < mat[i].length && mat[i][pos] == mid)
-                        pos += 1;
-                }
-
-                midPos = midPos + pos;
+                pos = Arrays.binarySearch(mat[i],mid) + 1;
+                midPos = midPos + Math.abs(pos);
             }
             if (midPos < medPos)
                 min = mid + 1;
