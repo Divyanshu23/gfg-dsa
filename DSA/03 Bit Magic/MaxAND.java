@@ -21,7 +21,10 @@ public class MaxAND {
             count = 0;
             for(int j=0;j<n;j++) {
                 if((temp & arr[j]) == temp) ++count;
-                if(count >= 2) res = temp;
+                if(count >= 2) {
+                    res = temp;
+                    break;
+                }
             }
         }
         return res;
