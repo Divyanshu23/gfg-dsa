@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-import javax.swing.text.AbstractDocument.LeafElement;
-
 public class Rearrange {
     public static void main (String[] args) {
         Scanner sc = new Scanner(System.in);

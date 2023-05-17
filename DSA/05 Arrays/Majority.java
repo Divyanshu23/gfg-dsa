@@ -18,12 +18,14 @@ public class Majority {
         int res = 0;
 
         for (int i = 1; i < arr.size(); i++) {
-            if(arr.get(i) == arr.get(res)) ++count;
-            else count--;
-            if(count == 0) {
-                count = 1;
+            if(arr.get(i) == arr.get(res)) 
+                ++count;
+            else if(count == 0) {
                 res = i;
+                count++;
             }
+            else 
+                count--;
         }
 
         count = 0;

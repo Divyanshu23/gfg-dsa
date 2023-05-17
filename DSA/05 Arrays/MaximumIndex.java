@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class enum MaximumIndex {
+public class MaximumIndex {
     public static void main (String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -24,13 +24,13 @@ public class enum MaximumIndex {
         int[] rMax = new int[n];
         rMax[n-1] = arr[n-1];
         for (int i = n-2; i >= 0; i--) {
-            rMAx[i] = Math.max(rMax[i+1], arr[i]);
+            rMax[i] = Math.max(rMax[i+1], arr[i]);
         }
 
         int i=0, j=0, maxIndxDiff = 0;
 
         while (i < n && j < n) {
-            if(rMax[i] >= lMin[j]) {
+            if(rMax[j] >= lMin[i]) {
                 maxIndxDiff = Math.max(maxIndxDiff, j-i);
                 j++;
             } else 
