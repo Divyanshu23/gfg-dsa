@@ -1,7 +1,4 @@
 import java.util.Scanner;
-
-import javax.swing.text.Position;
-
 import java.awt.Point;
 
 public class RepeatingElement {
@@ -20,7 +17,7 @@ public class RepeatingElement {
         int n = arr.length;
 
         for (int i = 0; i < arr.length; i++) {
-            arr[(arr[i]%n)-1] += (1%n)*n;
+            arr[(arr[i]%n)] += (1%n)*n;
         }
 
         var res = new Point();

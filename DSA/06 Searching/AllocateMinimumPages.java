@@ -8,8 +8,8 @@ public class AllocateMinimumPages {
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
-
         int k = sc.nextInt();
+        System.out.println(allocateMinimumPages(arr, k));
         sc.close();
     }
 
@@ -26,6 +26,7 @@ public class AllocateMinimumPages {
             students = getStudents(arr, mid);
             if(students <= k) {
                 high = mid-1;
+                ans = mid;
             }
             else low = mid+1;
         }
