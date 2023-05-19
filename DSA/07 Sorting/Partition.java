@@ -15,7 +15,7 @@ public class Partition {
         }
         System.out.println();
 
-        int p = lomutoPartition(arr, 0, arr.length-1);
+        lomutoPartition(arr, 0, arr.length-1);
         System.out.println("After Partition:");
         for (int i : arr) {
             System.out.print(i+" ");
@@ -46,7 +46,7 @@ public class Partition {
         }
 
         for (int i = 0; i < temp.length; i++) {
-            arr[i] = temp[i];
+            arr[i+l] = temp[i];
         }
 
         return res;

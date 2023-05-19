@@ -23,11 +23,7 @@ public class Inversrions {
 
     public static int merge(int[] arr, int l, int m, int h) {
         int count = 0;
-        int max = Integer.MIN_VALUE;
-        for (int i = l; i <= h; i++) {
-            max = Math.max(max, arr[i]);
-        }
-        max++;
+        int max = (arr[m] >= arr[h] ? arr[m]:arr[h]) + 1;
         if(max == 0) max++;
 
         int i = l, j = m+1, k = l;
