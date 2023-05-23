@@ -23,8 +23,8 @@ public class AnagramSearch {
         for (int i = pat.length(); i < text.length(); i++) {
             if(areSame(CT,CP)) return true;
 
-            CP[text.charAt(i - pat.length())]--;
-            CP[text.charAt(i)]++;
+            CT[text.charAt(i - pat.length())]--;
+            CT[text.charAt(i)]++;
         }
         return false;
     }
