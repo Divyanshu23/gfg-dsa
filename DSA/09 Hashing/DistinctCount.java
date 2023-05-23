@@ -1,4 +1,4 @@
-import java.util.HashSet;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class DistinctCount {
@@ -10,17 +10,22 @@ public class DistinctCount {
         for(int i=0;i<n;i++) {
             arr[i] = sc.nextInt();
         }
-        System.out.println(countDistinct(arr));
+        int k = sc.nextInt();
+        countDistinct(arr,k);
         sc.close();
     }
 
-    private static int countDistinct(int[] arr) {
-        var hs = new HashSet<Integer>(arr.length);
-
-        for (Integer i : arr) {
-            hs.add(i);
+    private static void countDistinct(int[] arr, int k) {
+        var hm = new HashMap<Integer, Integer>();
+        for (int i = 0; i < k; i++) {
+            hm.put(arr[i], i);
         }
+        System.out.println(hm.size());
 
-        return hs.size();
+        for (int i = k; i < arr.length;i++) {
+            if(hm.get(arr[i-k]) == (i-k)) hm.remove(arr[i-k]);
+            hm.put(arr[i], i);
+            System.out.println(hm.size());
+        }
     }
 }
