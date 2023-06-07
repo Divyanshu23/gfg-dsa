@@ -1,0 +1,5 @@
+For a full n-ary tree (look definition online):
+-- Let L be the no of leaf nodes
+-- Let I be the no of internal nodes
+
+L = (n-1)*I+1
