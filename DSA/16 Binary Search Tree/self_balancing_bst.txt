@@ -1,0 +1,12 @@
+Max heigth of  an AVL Tree = c*log2(n+2) + b
+c = 1.4405
+b = -1.3277
+
+Properties of Red Black Tree:-
+1) Every node has a color either red or black.
+2) The root of tree is always black.
+3) There are no two adjacent red nodes (A red node cannot have a red parent or red child).
+4) Every path from a node (including root) to any of its descendant NULL node has the same number of black nodes
+
+As a result:  Number of nodes on the path from a node to its farthest descendant should not be more than twice the number of nodes on 
+              the path to its closest descendant.
